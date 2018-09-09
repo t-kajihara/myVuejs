@@ -31,9 +31,9 @@ Vue.component('v-btn-select', {
             myIconColorDefault:     (this.iconColorDefault === '' || typeof this.iconColorDefault === 'undefined')      ? ''                : this.iconColorDefault,
             myIconColorSelected:    (this.iconColorSelected === '' || typeof this.iconColorSelected === 'undefined')    ? 'green'           : this.iconColorSelected,
             // ボタンの挙動に関する
-            myMultiple: (this.multiple === '' || typeof this.multiple === 'undefined')      ? false : this.multiple,
-            myMandatory: (this.mandatory === '' || typeof this.mandatory === 'undefined')   ? false : this.mandatory,
-            myOptions: (this.options === '' || typeof this.options === 'undefined')         ? [
+            myMultiple:     (this.multiple === '' || typeof this.multiple === 'undefined')      ? false : this.multiple,
+            myMandatory:    (this.mandatory === '' || typeof this.mandatory === 'undefined')    ? false : this.mandatory,
+            myOptions:      (this.options === '' || typeof this.options === 'undefined')        ? [
                 {text: 'OK', value: 'ok', disabled: false},
                 {text: 'NO', value: 'no', disabled: false},
             ]: this.options,
