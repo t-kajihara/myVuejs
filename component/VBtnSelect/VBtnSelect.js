@@ -96,5 +96,10 @@ Vue.component('v-btn-select', {
             this.$emit('input', this.mySelector);
             this.$emit('change');
         },
-    }
+    },
+	watch: {
+		value: function (newValue, oldValue) {
+            this.mySelector = newValue;
+        },
+	},
 })
