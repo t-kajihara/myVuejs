@@ -18,7 +18,7 @@ Vue.component('v-btn-select', {
         options: Array,             // 選択項目（default:OK/NG）
 	},
 	data: function(){
-		return {
+        return {
             // 初期値
             mySelector: this.value ,
             // ボタンのスタイルに関する
@@ -37,8 +37,7 @@ Vue.component('v-btn-select', {
                 {text: 'OK', value: 'ok', disabled: false},
                 {text: 'NO', value: 'no', disabled: false},
             ]: this.options,
-
-		}
+        }
 	},
     template: `
         <v-layout 
@@ -63,7 +62,7 @@ Vue.component('v-btn-select', {
         </v-layout>
 	`,
 	methods: {
-		$_isSelect: function(i){
+        $_isSelect: function(i){
             // ▪️Todo -> クリックされる旅に呼び出しされるためパフォーマス悪化になる。
 
             var ret = this.mySelector.indexOf(this.myOptions[i].value) >= 0;
@@ -92,7 +91,7 @@ Vue.component('v-btn-select', {
             }
             console.log(this.mySelector);
             this.$emit('input', this.mySelector);
-			this.$emit('change');
+            this.$emit('change');
         },
     }
 })
