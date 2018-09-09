@@ -63,7 +63,7 @@ Vue.component('v-btn-select', {
 	`,
 	methods: {
         $_isSelect: function(i){
-            // ▪️Todo -> クリックされる旅に呼び出しされるためパフォーマス悪化になる。
+            // ▪️Todo -> クリックされる度に呼び出しされるためパフォーマス悪化になる。
 
             var ret = this.mySelector.indexOf(this.myOptions[i].value) >= 0;
             console.log('$_isSelect:' + this.myOptions[i].text + ':' + ret);
