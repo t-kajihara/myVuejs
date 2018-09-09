@@ -5,6 +5,7 @@ Vue.component('v-btn-select', {
         value: Array,
         // ボタンのスタイルに関する
         large: Boolean,             // 大きいサイズのボタン（default:false）
+        outline: Boolean,           // アウトラインボタン（default:false）
         column: Boolean,            // フレックス方向を列に設定（default:false）
         colorDefault: String,       // 未選択時のカラー（default:''）
         colorSelected: String,      // 選択時のカラー（default:'green lighten-4'）
@@ -23,6 +24,7 @@ Vue.component('v-btn-select', {
             mySelector: this.value ,
             // ボタンのスタイルに関する
             myLarge:                (this.large === '' || typeof this.large === 'undefined')                            ? false             : this.large,
+            myOutline:              (this.outline === '' || typeof this.outline === 'undefined')                        ? false             : this.outline,
             myColumn:               (this.column === '' || typeof this.column === 'undefined')                          ? false             : this.column,
             myColorDefault:         (this.colorDefault === '' || typeof this.colorDefault === 'undefined')              ? ''                : this.colorDefault,
             myColorSelected:        (this.colorSelected === '' || typeof this.colorSelected === 'undefined')            ? 'green lighten-4' : this.colorSelected,
@@ -45,6 +47,7 @@ Vue.component('v-btn-select', {
             wrap>
             <v-btn v-for="(o, index) in myOptions" :key="index"
                 :large="myLarge"
+                :outline="myOutline"
                 :color="$_isSelect(index) ? myColorSelected : myColorDefault"
                 :disabled="o.disabled"
                 block
