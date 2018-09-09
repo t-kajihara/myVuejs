@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="VBtnSelect.js"></script>
+</head>
+<body>
+    <div id="app">
+        <v-app><v-content><v-container>
+            <v-layout column>
+                <p class="title">ボタンの挙動に関して</p>
+                <v-flex>
+                    <p>ノーマル</p>
+                    <v-btn-select
+                        v-model="selector1"
+                    ></v-btn-select>
+                    <p>result:{{ selector1 }}</p>
+                </v-flex>
+                <br>
+                <v-flex>
+                    <p>複数選択</p>
+                    <v-btn-select
+                        v-model="selector2"
+                        :options="options"
+                        multiple
+                    ></v-btn-select>
+                    <p>result:{{ selector2 }}</p>
+                </v-flex>
+                <br>
+                <v-flex>
+                    <p>必須選択</p>
+                    <v-btn-select
+                        v-model="selector3"
+                        :options="options"
+                        mandatory
+                    ></v-btn-select>
+                    <p>result:{{ selector3 }}</p>
+                </v-flex>
+                <br>
+                <v-flex>
+                    <p>イベント：change</p>
+                    <v-btn-select
+                        v-model="selector4"
+                        :options="options"
+                        mandatory
+                        multiple
+                        @change="i++"
+                    ></v-btn-select>
+                    <p>change:{{ i }}</p>
+                    <p>result:{{ selector4 }}</p>
+                </v-flex>
+                <br>
+                <p class="title">ボタンのスタイルに関して</p>
+                <v-flex>
+                    <p>アイコン</p>
+                    <v-btn-select
+                        v-model="selector5"
+                        :options="options"
+                        multiple
+                        icon-default="check_box_outline_blank"
+                        icon-selected="check_box"
+                    ></v-btn-select>
+                    <p>result:{{ selector5 }}</p>
+                </v-flex>
+                <br>
+                <v-flex>
+                    <p>大きいサイズ</p>
+                    <v-btn-select
+                        v-model="selector6"
+                        :options="options"
+                        multiple
+                        large
+                    ></v-btn-select>
+                    <p>result:{{ selector6 }}</p>
+                </v-flex>
+                <br>
+                <v-flex>
+                    <p>垂直表示</p>
+                    <v-btn-select
+                        v-model="selector7"
+                        :options="options"
+                        multiple
+                        column
+                    ></v-btn-select>
+                    <p>result:{{ selector7 }}</p>
+                </v-flex>
+                <br>
+            </v-layout>
+        
+        </v-container></v-content></v-app>
+    </div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            options: [
+                { text: 'Apple', value: 'Apple', disabled: false },
+				{ text: 'Lemon', value: 'Lemon', disabled: false },
+                { text: 'Banana', value: 'Banana', disabled: false },
+            ],
+            options2Row: [
+                { text: 'Apple<br>$ 1.0', value: 'Apple', disabled: false },
+				{ text: 'Lemon<br>$ 0.5', value: 'Lemon', disabled: false },
+                { text: 'Banana<br>$ 2.5', value: 'Banana', disabled: false },
+            ],
+            i: 0,
+            // ボタンセレクト ノーマル
+            selector1: [],
+            // ボタンセレクト　複数選択
+        	selector2: [],
+            // ボタンセレクト　必須選択
+            selector3: [],
+            // ボタンセレクト　イベント：change
+            selector4: [],
+            // ボタンセレクト　アイコン
+            selector5: [],
+            // ボタンセレクト　垂直表示
+            selector6: [],
+            // ボタンセレクト　大きいサイズ
+            selector7: [],
+        },
+    });
+</script>
+
+</html>
