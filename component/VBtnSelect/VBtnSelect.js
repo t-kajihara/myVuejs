@@ -43,7 +43,7 @@ Vue.component('v-btn-select', {
 	},
     template: `
         <v-layout 
-            :column="column" 
+            :column="myColumn" 
             wrap>
             <v-btn v-for="(o, index) in myOptions" :key="index"
                 :large="myLarge"
